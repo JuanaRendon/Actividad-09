@@ -1,0 +1,18 @@
+digraph CI {
+  rankdir=TB; node [shape=box, style="rounded,filled", fillcolor="#E8F1FB", fontname="Helvetica"];
+  dev [label="Desarrollador\ngit push / PR a main", fillcolor="#FFF4D6"];
+  trig [label="GitHub Actions\nevento push / pull_request"];
+  co [label="Checkout"];
+  php [label="Setup PHP\n(8.1 y 8.2)"];
+  dep [label="composer install\n(con caché)"];
+  env [label="Preparar entorno\n.env + key:generate"];
+  lint [label="Pint\n(estilo)"];
+  nd [label="Setup Node\nnpm install"];
+  build [label="npm run build"];
+  test [label="php artisan test"];
+  dec [shape=diamond, label="¿Todo\nexit 0?", fillcolor="#FFFFFF"];
+  ok [label="Aprobado\nmerge permitido", fillcolor="#D8F3DC"];
+  bad [label="Rechazado\nmerge bloqueado", fillcolor="#F8D7DA"];
+  dev -> trig -> co -> php -> dep -> env -> lint -> nd -> build -> test -> dec;
+  dec -> ok [label="sí"]; dec -> bad [label="no"];
+}
