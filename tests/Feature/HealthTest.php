@@ -11,7 +11,7 @@ class HealthTest extends TestCase
         $response = $this->getJson('/health');
 
         $response->assertStatus(200)
-            ->assertJson(['status' => 'error']);
+            ->assertJson(['status' => 'ok']);
     }
 
     public function test_unknown_route_returns_404(): void
