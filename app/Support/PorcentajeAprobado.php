@@ -16,6 +16,6 @@ class PorcentajeAprobado
             return 0.0;
         }
 
-        return round(($aprobadas / $total) * 100, 2);
+        return round($aprobadas / $total, 2);
     }
 }
