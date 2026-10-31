@@ -1,0 +1,2 @@
+// Agregar al final de routes/web.php
+Route::get('/health', fn () => response()->json(['status' => 'ok']));

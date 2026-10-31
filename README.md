@@ -34,7 +34,7 @@ push / pull_request (main)
   → .env + key:generate → Pint → setup Node → npm install → npm run build
   → php artisan test → ✅ aprobado / ❌ rechazado
 ```
-**Criterio de aprobación:** todas las etapas terminan con código de salida 0 en cada versión de PHP de la matriz (8.1 y 8.2).
+**Criterio de aprobación:** todas las etapas terminan con código de salida 0 en cada versión de PHP de la matriz ['8.2', '8.3'].
 **Criterio de rechazo:** cualquier etapa falla (dependencias, estilo, build o pruebas) y el merge a `main` queda bloqueado.
 
 ## Pruebas incluidas

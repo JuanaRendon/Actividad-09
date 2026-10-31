@@ -23,3 +23,10 @@ Route::get('/health', function () {
         'app' => config('app.name'),
     ]);
 });
+use App\Http\Controllers\TaskController;
+
+Route::prefix('api')->group(function () {
+    Route::get('/health', fn () => response()->json(['status' => 'ok']));
+    Route::get('/tasks', [TaskController::class, 'index']);
+    Route::post('/tasks', [TaskController::class, 'store']);
+});
