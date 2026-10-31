@@ -31,4 +31,4 @@ echo "| Aprobadas | $pass |\n";
 echo "| Fallidas | $fail |\n";
 echo "| Omitidas | $skip |\n";
 echo "| Porcentaje aprobado | {$pct}% |\n";
-echo "| Tiempo de pruebas | ".round($time, 2)." s |\n";
+echo '| Tiempo de pruebas | '.round($time, 2)." s |\n";
